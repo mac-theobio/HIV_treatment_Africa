@@ -11,11 +11,16 @@ target pngtarget pdftarget vtarget acrtarget: notarget
 
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
-# include $(ms)/perl.def
+include $(ms)/perl.def
 
 ##################################################################
 
 ## Content
+
+Sources += $(wildcard *.txt)
+
+base_search.entrez: base_search.txt te.pl
+	$(PUSH)
 
 ######################################################################
 
