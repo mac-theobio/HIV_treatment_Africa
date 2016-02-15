@@ -11,23 +11,19 @@ target pngtarget pdftarget vtarget acrtarget: notarget
 
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
-include $(ms)/perl.def
+-include $(ms)/python.def
 
 ##################################################################
 
 ## Content
 
-Sources += $(wildcard *.txt)
+Sources += base_search.txt
 
-base_search.entrez: base_search.txt te.pl
-	$(PUSH)
+Sources += $(wildcard *.py)
 
 ######################################################################
 
 ### Makestuff
-
-## Change this name to download a new version of the makestuff directory
-# Makefile: start.makestuff
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
