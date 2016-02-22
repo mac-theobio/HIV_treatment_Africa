@@ -21,7 +21,6 @@ SearchTerm="((Human+immunodeficiency+virus[tiab] OR acquired+immunodeficiency+sy
 
 handle = Entrez.egquery(term=SearchTerm)
 
-
 record = Entrez.read(handle)
 for row in record["eGQueryResult"]:
 	if row["DbName"]=="pubmed":

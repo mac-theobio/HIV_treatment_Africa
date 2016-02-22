@@ -6,7 +6,6 @@ target pngtarget pdftarget vtarget acrtarget: search.txt
 
 ##################################################################
 
-
 # make files
 
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
@@ -24,7 +23,7 @@ Sources += $(wildcard *.py)
 SystematicSearch.txt: SystematicSearch.py
 	python $<
 
-search.txt: search.py
+base.search.txt: base.txt search.py
 	$(PITH)
 
 ######################################################################
