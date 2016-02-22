@@ -1,0 +1,22 @@
+(Human+immunodeficiency+virus[tiab] 
+	OR acquired+immunodeficiency+syndrome[tiab]
+	OR HIV[tiab] OR AIDS[tiab] OR HIV/AIDS[tiab]
+)
+AND (Swaziland[tiab]
+	OR Botswana[tiab] OR Lesotho[tiab] OR South+Africa[tiab]
+	OR Zimbabwe[tiab] OR Namibia[tiab] OR Zambia[tiab]
+	OR Mozambique[tiab] OR Malawi[tiab] OR Uganda[tiab]
+	OR Equatorial+Guinea[tiab] OR Kenya[tiab] OR Tanzania[tiab]
+	OR sub+Saharan+Africa[tiab] OR sub-Saharan+Africa[tiab]
+)
+AND (treatment+failure[tiab] OR switch[tiab] OR switches[tiab]
+	OR switching[tiab] OR first+line[tiab] OR first-line[tiab]
+	OR second+line[tiab] OR second-line[tiab] OR
+	lost+to+follow+up[tiab] OR lost+to+follow-up[tiab]
+	OR loss+to+follow+up[tiab] OR loss+to+follow-up[tiab]
+	OR dropout[tiab] OR drop-out[tiab] OR dropouts[tiab]
+	OR drop+out[tiab] OR drop+outs[tiab]
+)
+AND (2010/01/01[PDAT] : 2015/12/31[PDAT])
+AND humans[MeSH Terms]
+AND English[lang]
