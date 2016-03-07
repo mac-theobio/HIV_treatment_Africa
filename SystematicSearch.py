@@ -10,7 +10,7 @@ import numpy as np
 
 import csv
 import os
-Entrez.email = "MyEmail@gmail.com"   # put your email address
+Entrez.email = "bewketu.bekele@gmail.com"   # put your email address
 
 # below are four different search concepts (using boolean arguments). Uncomment only one of them to see the output of the search. 
 
@@ -92,7 +92,7 @@ dict_data=FinalList
 csv_columns =HeaderOutPut  # the header of the table
 
 currentPath = os.getcwd()
-csv_file = currentPath + "/csv/SystematicSearch.csv"
+csv_file = currentPath + "/SystematicSearch.csv"
 
 WriteDictToCSV(csv_file,csv_columns,dict_data)  # the output will be saved automatically in csv folder
 
