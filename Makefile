@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: base.search.txt 
+target pngtarget pdftarget vtarget acrtarget: base.list.txt 
 
 ##################################################################
 
@@ -16,7 +16,7 @@ include stuff.mk
 
 ## Content
 
-Sources += base_search.txt base.txt
+Sources += base.txt
 
 Sources += $(wildcard *.py)
 
@@ -24,7 +24,17 @@ SystematicSearch.txt: SystematicSearch.py
 	python $<
 
 base.search.txt: base.txt search.py
-	$(PITH)
+
+%.search.txt: %.txt search.py
+	$(PITHOUT)
+
+base.list.txt: list.py
+%.list.txt: %.search.pkl list.py
+	$(PITHOUT)
+
+##################################################################
+
+%.pkl: %.txt ;
 
 ######################################################################
 

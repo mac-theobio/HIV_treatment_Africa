@@ -1,11 +1,12 @@
 from Bio import Entrez   
 from Bio import Medline
 import numpy as np
+import cPickle as pickle
 from sys import argv
 
 Entrez.email = "jdushoff@gmail.com"  
 
-script, filename = argv
+script, target, filename = argv
 
 txt = open(filename)
 
@@ -19,4 +20,7 @@ handle = Entrez.esearch(db="pubmed", term=SearchTerm, retmax=1000)
 record = Entrez.read(handle)
 idlist = record["IdList"]
 print len(idlist)
-print idlist
+target =  target.replace("txt", "pkl")
+
+pickle.dump(idlist, open( target, "wb" ) )
+
