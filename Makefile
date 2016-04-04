@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: base.list.txt 
+target pngtarget pdftarget vtarget acrtarget: SystematicSearch.txt 
 
 ##################################################################
 
@@ -34,9 +34,14 @@ base.list.txt: list.py
 %.list.txt: %.search.pkl list.py
 	$(PITHOUT)
 
+
+
 ##################################################################
 
 %.pkl: %.txt ;
+
+%.html: %.csv
+	csv2html -o $@ $<
 
 ######################################################################
 

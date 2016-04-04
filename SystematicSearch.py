@@ -77,7 +77,7 @@ print FinalList
 
 # using WriteDictToCSV function to convert the records (now as dictionaries) into csv file
 def WriteDictToCSV(csv_file,csv_columns,dict_data):
-    try:
+   try:
         with open(csv_file, 'w') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
             writer.writeheader()
