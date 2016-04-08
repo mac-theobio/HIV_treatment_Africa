@@ -1,25 +1,17 @@
-
 from Bio import Entrez   # biopython module for searching on Entrez
 from Bio import Medline
-import numpy as np
 
 import cPickle as pickle
 from sys import argv
 
-import csv
-import os
-
 Entrez.email = "jdushoff@gmail.com"  
 
-script, target, pkl = argv
+script, target, pin = argv
+pout =  target.replace("txt", "pkl")
 
-idlist = pickle.load( open( pkl, "rb" ) )
-
-print idlist
+idlist = pickle.load( open( pin, "rb" ) )
 
 handle = Entrez.efetch(db="pubmed", id=idlist, rettype="medline",retmode="text")
 records = Medline.parse(handle)
 
-records = list(records)
-
-np.savetxt(target, records, fmt="%s") # this saves in a text format
+pickle.dump(idlist, open( pout, "wb" ) )

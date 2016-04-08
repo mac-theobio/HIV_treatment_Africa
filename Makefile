@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: SystematicSearch.txt 
+target pngtarget pdftarget vtarget acrtarget: base.list.txt 
 
 ##################################################################
 
@@ -30,11 +30,10 @@ base.search.txt: base.txt search.py
 
 ## Right now list.py is just producing a text dump
 ## Our goal is to produce human-usable files: an html file for browsing abstracts and articles, and a csv file for entering notes and codes
+
 base.list.txt: list.py
 %.list.txt: %.search.pkl list.py
 	$(PITHOUT)
-
-
 
 ##################################################################
 
