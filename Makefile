@@ -23,16 +23,24 @@ Sources += $(wildcard *.py)
 SystematicSearch.txt: SystematicSearch.py
 	python $<
 
+## Get a list of ids matching a search
 base.search.pkl: base.search.txt ;
 base.search.txt: base.txt search.py
 %.search.txt: %.txt search.py
 	$(PITHOUT)
 
+## Get records from a list of ids
 ## Right now list.py is just producing a text dump
 ## Our goal is to produce human-usable files: an html file for browsing abstracts and articles, and a csv file for entering notes and codes
 
 base.list.txt: list.py
 %.list.txt: %.search.pkl list.py
+	$(PITHOUT)
+
+## Do something useful with a list of IDs
+
+base.table.txt: table.py
+%.list.txt: %.list.pkl table.py
 	$(PITHOUT)
 
 ##################################################################

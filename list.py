@@ -13,5 +13,7 @@ idlist = pickle.load( open( pin, "rb" ) )
 
 handle = Entrez.efetch(db="pubmed", id=idlist, rettype="medline",retmode="text")
 records = Medline.parse(handle)
+for record in records:
+	print record
 
-pickle.dump(idlist, open( pout, "wb" ) )
+# pickle.dump(records, open( pout, "wb" ) )
