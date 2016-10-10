@@ -6,6 +6,7 @@ from sys import argv
 
 Entrez.email = "jdushoff@gmail.com"  
 
+# Pickle files
 script, target, pin = argv
 pout =  target.replace("txt", "pkl")
 
@@ -16,4 +17,5 @@ records = Medline.parse(handle)
 for record in records:
 	print record
 
+## Bewketu, can you figure out how to save the records in pickle?
 # pickle.dump(records, open( pout, "wb" ) )

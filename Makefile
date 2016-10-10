@@ -16,6 +16,8 @@ include stuff.mk
 
 ## Content
 
+Sources += notes.md
+
 Sources += base.txt
 
 Sources += $(wildcard *.py)
@@ -40,7 +42,7 @@ base.list.txt: list.py
 ## Do something useful with a list of IDs
 
 base.table.txt: table.py
-%.list.txt: %.list.pkl table.py
+%.table.txt: %.list.pkl table.py
 	$(PITHOUT)
 
 ##################################################################

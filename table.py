@@ -4,6 +4,7 @@ from Bio import Medline
 import cPickle as pickle
 from sys import argv
 
+# Pickle files
 script, target, pin = argv
 pout =  target.replace("txt", "pkl")
 
@@ -51,13 +52,3 @@ currentPath = os.getcwd()
 csv_file = currentPath + "/SystematicSearch.csv"
 
 WriteDictToCSV(csv_file,csv_columns,dict_data)  # the output will be saved automatically in csv folder
-
-
-
-
-
-
-
-
-
-
