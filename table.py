@@ -16,6 +16,8 @@ fields =['PMID','FAU','JT','TI','AB']
 # TI: 	Title of the article
 # AB: 	Abstract of the article 
 
+## "rb" is read binary
+records = pickle.load(open( pin, "rb" ) )
 print len(records)
 
 FinalList=[None]*len(records) # creating an empty list
@@ -34,15 +36,15 @@ print FinalList
 
 # using WriteDictToCSV function to convert the records (now as dictionaries) into csv file
 def WriteDictToCSV(csv_file,csv_columns,dict_data):
-   try:
-        with open(csv_file, 'w') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
-            writer.writeheader()
-            for data in dict_data:
-                writer.writerow(data)
-    except IOError as (errno, strerror):
-            print("I/O error({0}): {1}".format(errno, strerror))    
-    return            
+	try:
+		with open(csv_file, 'w') as csvfile:
+			writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
+			writer.writeheader()
+		for data in dict_data:
+			writer.writerow(data)
+	except IOError as (errno, strerror):
+		print("I/O error({0}): {1}".format(errno, strerror))    
+	return            
 
 # using WriteDictToCSV function defined above 
 dict_data=FinalList

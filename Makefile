@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: base.list.txt 
+target pngtarget pdftarget vtarget acrtarget: test.table.txt 
 
 ##################################################################
 
@@ -53,9 +53,12 @@ base.table.txt: table.py
 %.table.txt: %.list.pkl table.py
 	$(PITHOUT)
 
+
 ## Make a shorter search for testing
 
 test.list.txt:
+
+test.table.txt: table.py
 
 ##################################################################
 
