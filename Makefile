@@ -18,7 +18,7 @@ include stuff.mk
 
 Sources += notes.md
 
-Sources += base.txt
+Sources += base.txt test.txt
 
 Sources += $(wildcard *.py)
 
@@ -52,7 +52,6 @@ base.list.txt: list.py
 base.table.txt: table.py
 %.table.txt: %.list.pkl table.py
 	$(PITHOUT)
-
 
 ## Make a shorter search for testing
 
