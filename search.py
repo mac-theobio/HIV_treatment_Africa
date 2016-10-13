@@ -19,8 +19,11 @@ handle = Entrez.esearch(db="pubmed", term=SearchTerm, retmax=1000)
 
 record = Entrez.read(handle)
 idlist = record["IdList"]
-print len(idlist)
-target =  target.replace("txt", "pkl")
 
+## For humans, just the number of records
+print len(idlist)
+
+## For pipeline, save all the pubmed IDs
+target =  target.replace("txt", "pkl")
 pickle.dump(idlist, open( target, "wb" ) )
 

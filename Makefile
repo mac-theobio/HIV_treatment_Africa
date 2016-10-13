@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: base.table.txt 
+target pngtarget pdftarget vtarget acrtarget: base.list.txt 
 
 ##################################################################
 
@@ -22,12 +22,20 @@ Sources += base.txt
 
 Sources += $(wildcard *.py)
 
+######################################################################
+
+## BB's big script
 SystematicSearch.txt: SystematicSearch.py
 	python $<
 
+######################################################################
+
+## JD's pipeline
 ## Get a list of ids matching a search
 base.search.pkl: base.search.txt ;
 base.search.txt: base.txt search.py
+
+.PRECIOUS: %.search.txt
 %.search.txt: %.txt search.py
 	$(PITHOUT)
 
@@ -44,6 +52,10 @@ base.list.txt: list.py
 base.table.txt: table.py
 %.table.txt: %.list.pkl table.py
 	$(PITHOUT)
+
+## Make a shorter search for testing
+
+test.list.txt:
 
 ##################################################################
 
