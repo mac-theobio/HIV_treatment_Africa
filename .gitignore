@@ -1,5 +1,7 @@
-commit.txt
+commit.time
 .*.sw*
+
+*.pkl
 
 *.pdf
 
