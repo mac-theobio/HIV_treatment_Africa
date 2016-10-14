@@ -11,6 +11,7 @@ import os
 # Pickle files
 script, target, pin = argv
 pout =  target.replace("txt", "pkl")
+csv_file = target.replace("txt", "csv")
 
 fields =['PMID','FAU','JT','TI','AB'] # selected keys or items from the search result. The reason for choosing some items is 1) to only download items of interest. 2) some articles have different details. Example an article may have 20 items including 'PMID','FAU','JT','TI','AB'. Whereas, another article may have less or more than 20 items. By doing this we make the number of items constant. ['PMID','FAU','JT','TI','AB' are items found for every article]. 
 
@@ -55,8 +56,5 @@ def WriteDictToCSV(csv_file,csv_columns,dict_data):
 # using WriteDictToCSV function defined above 
 dict_data=dict
 csv_columns =fields  # the header of the table
-
-currentPath = os.getcwd()
-csv_file = currentPath + "/test.csv"
 
 WriteDictToCSV(csv_file,csv_columns,dict_data)  # the output will be saved automatically in csv folder

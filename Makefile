@@ -32,8 +32,6 @@ SystematicSearch.txt: SystematicSearch.py
 
 ## JD's pipeline
 ## Get a list of ids matching a search
-base.search.pkl: base.search.txt ;
-base.search.txt: base.txt search.py
 
 .PRECIOUS: %.search.txt
 %.search.txt: %.txt search.py
