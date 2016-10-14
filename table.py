@@ -23,7 +23,7 @@ fields =['PMID','FAU','JT','TI','AB'] # selected keys or items from the search r
 
 ## "rb" is read binary
 records = pickle.load(open( pin, "rb" ) )
-print len(records)
+print len(records) . "records read"
 
 dict=[None]*len(records) # creating an empty list
 
@@ -38,8 +38,6 @@ for n in range(len(records)):
 			dict[n][str(fields[m])]= 'None'
 
 # for some reason I don't know, it was complaining about 'FAU' for some articles, and hence used if ... else function above. 
-
-print dict
 
 # using WriteDictToCSV function to convert the records (now as dictionaries) into csv file
 def WriteDictToCSV(csv_file,csv_columns,dict_data):
