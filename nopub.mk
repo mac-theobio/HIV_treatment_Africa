@@ -1,2 +1,2 @@
-base.list.txt base.list.pkl: %: gitpush/%
+base.list.txt base.list.pkl: %: git_push/%
 	$(copy)
