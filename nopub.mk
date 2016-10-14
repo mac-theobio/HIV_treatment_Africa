@@ -1,2 +1,2 @@
-base.list.txt base.list.pkl: %: git_push/%
-	$(copy)
+base.list.txt base.list.pkl: 
+	$(CP) git_push/$@ .
