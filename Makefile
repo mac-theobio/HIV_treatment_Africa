@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: base.table.txt 
+target pngtarget pdftarget vtarget acrtarget: base.table.csv 
 
 ##################################################################
 
@@ -31,6 +31,8 @@ SystematicSearch.txt: SystematicSearch.py
 ######################################################################
 
 ## JD's pipeline
+
+## These two scripts use Pubmed, and can be dicey
 ## Get a list of ids matching a search
 
 .PRECIOUS: %.search.txt
@@ -45,21 +47,22 @@ base.list.txt: list.py
 %.list.txt: %.search.pkl list.py
 	$(PITHOUT)
 
-## Do something useful with a list of IDs
+# Include this to bypass Pubmed stuff, in theory
+Sources += nopub.mk
 
+######################################################################
+
+## Do something useful with a list of IDs
 base.table.txt: table.py
 %.table.txt: %.list.pkl table.py
 	$(PITHOUT)
 
-## Make a shorter search for testing
-
-test.list.txt:
-
-test.table.txt: table.py
+base.table.csv: table.py
 
 ##################################################################
 
 %.pkl: %.txt ;
+%.csv: %.txt ;
 
 %.html: %.csv
 	csv2html -o $@ $<

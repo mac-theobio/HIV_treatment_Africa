@@ -23,7 +23,7 @@ fields =['PMID','FAU','JT','TI','AB'] # selected keys or items from the search r
 
 ## "rb" is read binary
 records = pickle.load(open( pin, "rb" ) )
-print len(records) . "records read"
+print len(records)
 
 dict=[None]*len(records) # creating an empty list
 
