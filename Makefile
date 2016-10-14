@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: base.table.html
+target pngtarget pdftarget vtarget acrtarget: base.table.txt 
 
 ##################################################################
 
@@ -63,7 +63,7 @@ base.table.csv: table.py
 %.pkl: %.txt ;
 %.csv: %.txt ;
 
-%.html: %.csv
+%.csv.html: %.csv
 	csv2html -o $@ $<
 
 ######################################################################
