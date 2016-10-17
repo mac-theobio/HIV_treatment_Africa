@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: base.table.txt
+target pngtarget pdftarget vtarget acrtarget: base.html
 
 ##################################################################
 
@@ -28,7 +28,7 @@ Sources += $(wildcard *.py)
 SystematicSearch.txt: SystematicSearch.py
 	python $<
 
-html: csv2html.py base.table.txt > base.html
+base.html: csv2html.py base.table.txt > base.html
 	python $<
 
 ######################################################################
