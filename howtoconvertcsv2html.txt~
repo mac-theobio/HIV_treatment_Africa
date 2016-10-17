@@ -1,0 +1,7 @@
+# how to convert csv to html
+
+On Terminal go to the directory of the local repository of HIV_treatment_Africa
+
+type "python csv2html.py SystematicSearch.csv > SystematicSearch.html" and press ENTER
+
+Finally we get "SystematicSearch.html"
