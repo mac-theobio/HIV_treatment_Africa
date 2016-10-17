@@ -28,6 +28,9 @@ Sources += $(wildcard *.py)
 SystematicSearch.txt: SystematicSearch.py
 	python $<
 
+html: csv2html.py base.table.txt > base.html
+	python $<
+
 ######################################################################
 
 ## JD's pipeline
