@@ -28,7 +28,7 @@ Sources += $(wildcard *.py)
 SystematicSearch.txt: SystematicSearch.py
 	python $<
 
-base.html: csv2html.py base.table.txt > base.html
+base.html: csv2html.py base.table.csv > base.html
 	python $<
 
 ######################################################################
