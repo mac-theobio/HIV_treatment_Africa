@@ -17,6 +17,6 @@ AND (treatment+failure[tiab] OR switch[tiab] OR switches[tiab]
 	OR dropout[tiab] OR drop-out[tiab] OR dropouts[tiab]
 	OR drop+out[tiab] OR drop+outs[tiab]
 )
-AND (2010/01/01[PDAT] : 2015/12/31[PDAT])
+AND (2010/01/01[PDAT] : 2016/12/31[PDAT])
 AND humans[MeSH Terms]
 AND English[lang]
