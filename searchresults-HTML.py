@@ -49,5 +49,5 @@ f=open('search-results.html','w')
 f.write(htmlstuff)
 f.close()
 
-webbrowser.open('search-results.html')
+# webbrowser.open('search-results.html')
 

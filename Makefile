@@ -1,9 +1,8 @@
-
 # HIV_treatment_Africa
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: base.table.txt
+target pngtarget pdftarget vtarget acrtarget: meeting.html 
 
 ##################################################################
 
@@ -29,6 +28,13 @@ Sources += $(wildcard *.py)
 SystematicSearch.txt: SystematicSearch.py
 	python $<
 
+search-results.html: base.list.pkl searchresults-HTML.py
+	python searchresults-HTML.py
+
+meeting.md: base.list.pkl meeting.py
+	$(PITH)
+
+meeting.html: meeting.py
 
 ######################################################################
 
@@ -74,6 +80,7 @@ base.table.csv: table.py
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
+-include $(ms)/pandoc.mk
 
 # -include $(ms)/wrapR.mk
 # -include $(ms)/oldlatex.mk

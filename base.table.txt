@@ -1,2 +1,0 @@
-704 records read
-Wrote to csv file base.table.csv
