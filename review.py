@@ -1,9 +1,12 @@
-import pickle
+import cPickle as pickle
+from sys import argv
+
+# Pickle files
+script, target, pin = argv
+pout =  target.replace("txt", "pkl")
 
 # load a pickle file
-pkl_file = open('base.list.pkl', 'rb')
-records = pickle.load(pkl_file)
-pkl_file.close()
+records = pickle.load(open( pin, "rb" ) )
 
 for record in records:
 	print "----------------------------------------\n"
@@ -15,13 +18,15 @@ for record in records:
 		print "_" + (" ".join(record['AU'])) + "_"
 
 	### Links
-	print(
-		"[Pubmed](https://www.ncbi.nlm.nih.gov/pubmed/"
+	print("\n"
+		+ "[Pubmed](https://www.ncbi.nlm.nih.gov/pubmed/"
 		+ record['PMID']
 		+ ")"	
 	)
 
 	### Abstract
-	print "\n" + record['AB']
+	if 'AB' in record.keys():
+		print "\n" + record['AB']
+
 	print "\n"
 

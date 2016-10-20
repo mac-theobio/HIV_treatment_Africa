@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: meeting.html 
+target pngtarget pdftarget vtarget acrtarget: base.rev.review.html 
 
 ##################################################################
 
@@ -40,6 +40,12 @@ meeting.html: meeting.py
 
 ## JD's pipeline
 
+## Modify a search by limiting to reviews
+
+%.rev.txt: %.txt
+	$(copy)
+	echo 'AND Review[ptyp]' >> $@
+
 ## These two scripts use Pubmed, and can be dicey
 ## Get a list of ids matching a search
 
@@ -60,11 +66,18 @@ Sources += nopub.mk
 ######################################################################
 
 ## Do something useful with a list of IDs
+
+### A table
 base.table.txt: table.py
 %.table.txt: %.list.pkl table.py
 	$(PITHOUT)
 
 base.table.csv: table.py
+
+### A review document
+base.rev.review.html:
+%.review.md: %.list.pkl review.py
+	$(PITHOUT)
 
 ##################################################################
 

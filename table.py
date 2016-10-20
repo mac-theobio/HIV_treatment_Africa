@@ -1,5 +1,3 @@
-from Bio import Entrez   # biopython module for searching on Entrez
-from Bio import Medline
 
 import cPickle as pickle
 from sys import argv
