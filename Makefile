@@ -62,8 +62,7 @@ Sources += hampson.txt
 ## Right now list.py is just producing a text dump
 ## Our goal is to produce human-usable files: an html file for browsing abstracts and articles, and a csv file for entering notes and codes
 
-hampson.list.txt: hampson.search.pkl list.py
-
+%.search.pkl: %.search.txt ;
 %.list.txt: %.search.pkl list.py
 	$(PITHOUT)
 
@@ -85,6 +84,8 @@ base.table.csv: table.py
 ### Formatting
 dushoff.curr.md: curr.py
 dushoff.curr.html: curr.py
+
+%.list.pkl: %.list.txt ;
 %.curr.md: %.list.pkl curr.py
 	$(PITHOUT)
 
