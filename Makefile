@@ -45,7 +45,7 @@ meeting.html: meeting.py
 
 ## JD's pipeline
 
-Sources += hampson.txt
+Sources += hampson.txt dushoff.txt
 
 ## Modify a search by limiting to reviews
 
