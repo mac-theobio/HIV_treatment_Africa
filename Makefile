@@ -11,6 +11,8 @@ current: target
 
 # make files
 
+.SUFFIXES:
+
 Sources = Makefile .gitignore README.md sub.mk LICENSE.md
 include sub.mk
 -include $(ms)/python.def
