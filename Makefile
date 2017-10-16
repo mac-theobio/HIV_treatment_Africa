@@ -1,17 +1,18 @@
 # HIV_treatment_Africa
 # https://github.com/mac-theobio/HIV_treatment_Africa/
+## Dangerously developing generic bib stuff here! Can I cut it out??
 
 ### Hooks for the editor to set the default target
-current: target
 
-target pngtarget pdftarget vtarget acrtarget: base.rev.review.html 
+-include target.mk
+current: target
 
 ##################################################################
 
 # make files
 
-Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
-include stuff.mk
+Sources = Makefile .gitignore README.md sub.mk LICENSE.md
+include sub.mk
 -include $(ms)/python.def
 
 ##################################################################
@@ -42,6 +43,8 @@ meeting.html: meeting.py
 
 ## JD's pipeline
 
+Sources += hampson.txt
+
 ## Modify a search by limiting to reviews
 
 %.rev.txt: %.txt
@@ -51,6 +54,7 @@ meeting.html: meeting.py
 ## These two scripts use Pubmed, and can be dicey
 ## Get a list of ids matching a search
 
+
 .PRECIOUS: %.search.txt
 %.search.txt: %.txt search.py
 	$(PITHOUT)
@@ -59,10 +63,13 @@ meeting.html: meeting.py
 ## Right now list.py is just producing a text dump
 ## Our goal is to produce human-usable files: an html file for browsing abstracts and articles, and a csv file for entering notes and codes
 
+hampson.list.txt: 
+
 %.list.txt: %.search.pkl list.py
 	$(PITHOUT)
 
 # Include this to bypass Pubmed stuff, in theory
+# Old caching stuff; update 
 Sources += nopub.mk
 
 ######################################################################
@@ -75,6 +82,11 @@ base.table.txt: table.py
 	$(PITHOUT)
 
 base.table.csv: table.py
+
+### Formatting
+hampson.curr.txt: curr.py
+%.curr.txt: %.list.pkl curr.py
+	$(PITHOUT)
 
 ### A review document
 base.rev.review.html:
