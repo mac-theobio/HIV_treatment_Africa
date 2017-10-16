@@ -54,7 +54,6 @@ Sources += hampson.txt
 ## These two scripts use Pubmed, and can be dicey
 ## Get a list of ids matching a search
 
-
 .PRECIOUS: %.search.txt
 %.search.txt: %.txt search.py
 	$(PITHOUT)
@@ -63,7 +62,7 @@ Sources += hampson.txt
 ## Right now list.py is just producing a text dump
 ## Our goal is to produce human-usable files: an html file for browsing abstracts and articles, and a csv file for entering notes and codes
 
-hampson.list.txt: 
+hampson.list.txt: hampson.search.pkl list.py
 
 %.list.txt: %.search.pkl list.py
 	$(PITHOUT)
@@ -84,8 +83,9 @@ base.table.txt: table.py
 base.table.csv: table.py
 
 ### Formatting
-hampson.curr.txt: curr.py
-%.curr.txt: %.list.pkl curr.py
+dushoff.curr.md: curr.py
+dushoff.curr.html: curr.py
+%.curr.md: %.list.pkl curr.py
 	$(PITHOUT)
 
 ### A review document
@@ -93,9 +93,6 @@ base.rev.review.html:
 %.review.md: %.list.pkl review.py
 	$(PITHOUT)
 
-##################################################################
-
-# 
 
 ######################################################################
 
