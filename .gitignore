@@ -1,28 +1,17 @@
-commit.time
-.*.sw*
-
-*.pkl
-
-*.pdf
-
-*.log
-*.aux
-.*.aux
-*.blg
-*.bbl
-
-*out
-*.RData
-*.Rlog
-*.r
-.Rhistory
-
-*.wrapR.*
-
+## Content from .ignore
 local.mk
+target.mk
+.*.sw*
+make.log
+.gitignore 
 
-testdir/
-.testdir/
-subclone_dir/
-
-*.makestuff
+## content from makestuff
+commit.time
+commit.default
+dotdir/
+clonedir/
+up.time
+all.time
+.clean_dir
+*.oldfile
+*.olddiff
