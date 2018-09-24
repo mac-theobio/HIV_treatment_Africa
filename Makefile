@@ -96,7 +96,6 @@ base.rev.review.html:
 %.review.md: %.list.pkl review.py
 	$(PITHOUT)
 
-
 ######################################################################
 
 %.pkl: %.txt ;
