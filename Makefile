@@ -56,6 +56,7 @@ Sources += hampson.txt dushoff.txt
 ## These two scripts use Pubmed, and can be dicey
 ## Get a list of ids matching a search
 
+Ignore += *.search.txt
 .PRECIOUS: %.search.txt
 %.search.txt: %.txt search.py
 	$(PITHOUT)
@@ -87,7 +88,10 @@ base.table.csv: table.py
 dushoff.curr.md: curr.py
 dushoff.curr.html: curr.py
 
+Ignore += *.list.pkl
 %.list.pkl: %.list.txt ;
+
+Ignore += *.curr.md *.curr.html
 %.curr.md: %.list.pkl curr.py
 	$(PITHOUT)
 
